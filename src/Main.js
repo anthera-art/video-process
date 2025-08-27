@@ -53,7 +53,7 @@ app.get("/process/:id", async (req, res) => {
 
         // at the end, this script should handle fully updating the ItemVideos table, setting Ready to the current timestamp it finished processing and other data
         // it should also upload both the original and processed video to S3
-        
+
         exec(ffmpegCmd, (err2) => {
             console.log("gaming")
             if (err2) return res.status(500).send("error processing video at " + inputPath + "\n" + err2);
